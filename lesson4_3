@@ -1,0 +1,6 @@
+user_number = int(input('Введите число: '))
+a = str(user_number)
+my_list = []
+for i in a:
+    my_list.append(int(i))
+print(sum(my_list))
