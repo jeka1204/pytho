@@ -1,0 +1,24 @@
+import random, math
+
+my_list = []
+
+for i in range(random.randint(1,10)):
+    my_list.append(random.randint(1,1000))
+print(my_list)
+
+sorted_list = sorted(my_list)
+print(sorted_list)
+
+kk = map(lambda i: math.sqrt(i), sorted_list)
+kk_list = list(kk)
+print(kk_list)
+
+lenoflist = len(kk_list)
+if lenoflist%2 != 0:
+    index_of_mediana = kk_list[lenoflist//2]
+else:
+    index_of_mediana = (kk_list[lenoflist//2-1] + kk_list[lenoflist//2]) / 2
+print(index_of_mediana)
+
+result = filter(lambda ind: ind > index_of_mediana, kk_list)
+print(list(result))
