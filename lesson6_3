@@ -1,0 +1,11 @@
+user_name = input('Введите слова: ').split()
+print(user_name)
+
+w = 0
+
+for i in user_name:
+    if len(i) > w:
+        w = len(i)
+        word: str = i
+
+print('самое длинное слово: ', word)
