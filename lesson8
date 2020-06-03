@@ -1,0 +1,60 @@
+import json, time
+
+try:
+    action = int(input('Выберите действие: 1 - записать контакт, 2 - открыть контакты, 3 - выйти: '))
+except ValueError:
+    print('Несуществующее действие. Будет совершен выход.')
+    action = 3
+
+
+def get_contact():
+    name = input('Имя: ')
+    surname = input('Фамилмя: ')
+    try:
+        phone = int(input('Телефо: '))
+    except ValueError:
+        print('Значение должно быть в цифрах')
+        phone = 123
+    email = input('email: ')
+    t = time.strftime('%X', time.localtime())
+    new_contact = {'Время': t, 'Имя': name, 'Фамилия': surname, 'Телефон': phone, 'email': email}
+    return new_contact
+
+
+def get_contact_2(new_contact):
+    try:
+        all_contacts = json.load(open('contact.json'))
+    except OSError:
+        all_contacts = []
+
+    file_json = open('contact.json', 'w')
+    all_contacts.append(new_contact)
+    json.dump(all_contacts, file_json)
+    file_json.close()
+
+
+while action == 1:
+    get_contact_2(get_contact())
+    try:
+        action = int(input('Выберите действие: 1 - записать контакт, 2 - открыть контакты, 3 - выйти: '))
+    except ValueError:
+        print('Несуществующее действие. Будет совершен выход.')
+        action = 3
+
+if action == 2:
+    file_json = open('contact.json', 'r')
+    contacts = json.load(file_json)
+    file_json.close()
+    print(contacts)
+    try:
+        list_action = int(input('Выберите действие: 1 - очистить список, 2 - выйти: '))
+    except ValueError:
+        print('Несуществующее действие. Программа будет закрыта.')
+        list_action = 2
+
+if action == 3 or list_action == 2:
+    quit()
+
+if list_action == 1:
+    open('contact.json', 'w').close()
+    quit()
