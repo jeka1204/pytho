@@ -1,0 +1,8 @@
+import time
+
+a = 1
+while a == 1:
+    text = (input('Введите текст '))
+    t = time.ctime()
+    with open("textfile.txt", "a") as file:
+        file.write(f'\n{t} : {text}')
