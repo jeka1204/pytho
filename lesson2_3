@@ -1,0 +1,11 @@
+user_num = float(input('Введите число в метрах: '))
+unit = (input('Введите единицу измерения(мм,см,км): '))
+if unit == 'мм':
+    print(f"{user_num*1000}")
+elif unit == 'см':
+    print(f"{user_num*100}")
+elif unit == 'км':
+    print(f"{user_num*0.001}")
+else:
+    print('Заданое единица не измеряется')
+
