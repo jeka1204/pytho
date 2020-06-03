@@ -1,0 +1,16 @@
+import random
+
+def sum2(random_numbers):
+    a = 0
+    for i in random_numbers:
+        a = a + i
+    return a
+
+
+user_number = int(input('Введите колво генерируемых чисел: '))
+random_numbers = [random.randint(0, 1000) for i in range (user_number)]
+
+print(f'Числа которые были сгенерированы: {random_numbers}')
+
+result = sum2(random_numbers)
+print(result)
