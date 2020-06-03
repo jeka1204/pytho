@@ -1,0 +1,2 @@
+with open("file.py", "r") as original, open("script.copy2.py", "w") as copy:
+    copy.write(original.read())
