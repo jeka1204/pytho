@@ -1,0 +1,12 @@
+import random
+number_user = int(input("Введите количество генерируемых чисел: "))
+true_number = []
+my_list = [random.randint(0,1000) for random_number in range(number_user)]
+print(f'Вот случайные числа,{my_list}')
+for my_list in my_list:
+    if my_list % 2 == 0:
+        true_number.append(my_list)
+if len(true_number) > 0:
+    print(f"Верные числа: {true_number}")
+else:
+    print("К сожалению список не имеет верных чисел.")
