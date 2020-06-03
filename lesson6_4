@@ -1,0 +1,7 @@
+user_phrase = input('Введите фразу: ')
+
+
+if user_phrase == user_phrase[::-1]:
+    print('фраза палиндром')
+else:
+    print('фраза не палидром')
