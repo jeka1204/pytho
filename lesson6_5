@@ -1,0 +1,17 @@
+import string
+import random
+
+
+
+
+def password():
+
+    pass1 = string.digits + string.ascii_letters
+    return str(''.join([random.choice(pass1) for i in range(5)]))
+
+
+p = password()
+print(p)
+
+with open("password_note.txt", "a") as file:
+    file.write(f'\n{p}')
