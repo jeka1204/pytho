@@ -1,0 +1,17 @@
+import random
+
+random_number = random.randint(0, 20)
+tries = 0
+print('Введите ваше чило, у вас 4 попытки: ')
+while tries <= 4:
+    tries = tries +1
+    user_number = int(input())
+    if random_number == user_number:
+        print('Поздравляем, вы угадали!')
+        break
+    elif random_number > user_number:
+        print('Число должно быть меньше')
+    elif random_number < user_number:
+        print('Число должно быть больше')
+    if tries ==4:
+     print('Вы использовали все попытки...')
