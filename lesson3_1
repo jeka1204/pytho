@@ -1,0 +1,15 @@
+number1 = int(input('Введите первое значение: '))
+number2 = int(input('Введите второе значение: '))
+
+def two_number(a, b):
+    if b == a:
+        return True
+    elif a + b == 5:
+        return True
+    elif a - b == 5:
+        return True
+    elif b - a == 5:
+        return True
+    else:
+        print('unavaible')
+print(two_number(number1, number2))
